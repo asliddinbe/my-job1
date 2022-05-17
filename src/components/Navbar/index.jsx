@@ -5,11 +5,11 @@ import {
   Collapse,
   ListItemButton,
   ListItemText,
-  Typography,
 } from "@mui/material";
 import React from "react";
 import NavList from "./NavList";
 import brand from "../../assets/img/nav-brand.webp";
+import ButtonGraup from "../ButtonGraup";
 
 export default () => {
   const [open, setOpen] = React.useState(false);
@@ -28,23 +28,20 @@ export default () => {
             boxShadow: "0px -5px 10px",
           }}
         >
-          <img src={brand} />
+          <img src={brand} style={{ margin: "0.5% 5.5%" }} />
           <NavList none />
-          <Box>
-            <Button>Register</Button>
-            <Button>Login</Button>
-          </Box>
+          <ButtonGraup navbutton />
         </Box>
         {/* mobile */}
         <Box
           sx={{
             display: { md: "none", sm: "flex" },
             flexDirection: "column",
-            backgroundColor: "#4C4C4C",
             width: { sm: "95%", xs: "100%" },
           }}
         >
-          <Box sx={{ display: "flex" }}>
+          <img src={brand} style={{ marginLeft: "2%" }} />
+          <Box sx={{ backgroundColor: "#4C4C4C", display: "flex" }}>
             <ListItemText />
             <ListItemButton
               onClick={handleClick}
@@ -61,7 +58,7 @@ export default () => {
                 border: 1,
                 color: "white",
                 fontFamily: "arial",
-                backgroundColor: "#222222",
+                backgroundColor: "#4C4C4C",
                 maxWidth: "80px",
                 fontWeight: 550,
               }}
