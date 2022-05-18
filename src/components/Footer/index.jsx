@@ -7,9 +7,11 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import TelegramIcon from "@mui/icons-material/Telegram";
+
 import TwitterIcon from "@mui/icons-material/Twitter";
-import img from "../../assets/img/nav-brand.webp";
+import foot from "../../assets/img/foo.webp";
+import InputGraup from "../InputGraup";
+import ButtonGraup from "../ButtonGraup";
 export default () => {
   const foo = [{ son: "5000+" }, { son: "451" }, { son: "568" }];
   const icon = {
@@ -124,34 +126,9 @@ export default () => {
                     Heaven fruitful doesn't over lesser in <br /> days. Appear
                     creeping.
                   </Typography>
-                  <Box sx={{ pt: "10%" }}>
-                    <InputBase
-                      sx={{
-                        backgroundColor: "white",
-                        borderTopLeftRadius: "5px",
-                        borderBottomLeftRadius: "5px",
-                        pt: "2%",
-                        pb: "2%",
-                        pl: "5%",
-                        width: "80%",
-                      }}
-                      placeholder="Email Address"
-                    />
-                    <Button
-                      sx={{
-                        backgroundColor: "#FB246A",
-                        color: "white",
-                        maxWidth: "50px",
-                        minWidth: "20px",
-                        maxHeight: "45px",
-                        minHeight: "45px",
-                        ":hover": {
-                          backgroundColor: "#FB246A",
-                        },
-                      }}
-                    >
-                      <TelegramIcon />
-                    </Button>
+                  <Box sx={{ pt: "10%", display: "flex" }}>
+                    <InputGraup foo />
+                    <ButtonGraup foo />
                   </Box>
                 </Typography>
               </Grid>
@@ -162,7 +139,7 @@ export default () => {
           <Container>
             <Grid container>
               <Grid xl={3} lg={3} md={3} sm={4} xs={12} item>
-                <img src={img} style={{ color: "white" }} />
+                <img src={foot} style={{ color: "white" }} />
               </Grid>
               {foo.map((item, ix3) => (
                 <Grid
@@ -197,7 +174,12 @@ export default () => {
                 md={6}
                 sm={12}
                 xs={12}
-                sx={{ display: "flex", justifyContent: "end", gap: "15px" }}
+                sx={{
+                  display: "flex",
+                  justifyContent: { md: "end", xs: "start" },
+                  gap: "15px ",
+                  mt: { xs: "12px" },
+                }}
               >
                 <TwitterIcon sx={icon} />
                 <TwitterIcon sx={icon} />

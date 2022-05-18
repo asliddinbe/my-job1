@@ -40,7 +40,9 @@ export default () => {
             width: { sm: "95%", xs: "100%" },
           }}
         >
-          <img src={brand} style={{ marginLeft: "2%" }} />
+          <Box>
+            <img src={brand} style={{ marginLeft: "2%" }} />
+          </Box>
           <Box sx={{ backgroundColor: "#4C4C4C", display: "flex" }}>
             <ListItemText />
             <ListItemButton
