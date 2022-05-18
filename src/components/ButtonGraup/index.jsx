@@ -1,7 +1,7 @@
 import { Box, Button } from "@mui/material";
 import React from "react";
-
-export default ({ navbutton }) => {
+import TelegramIcon from "@mui/icons-material/Telegram";
+export default ({ navbutton, foo }) => {
   return (
     <>
       {navbutton && (
@@ -15,6 +15,7 @@ export default ({ navbutton }) => {
           }}
         >
           <Button
+            className="btn btn2"
             sx={{
               border: 1,
               width: "45%",
@@ -27,6 +28,7 @@ export default ({ navbutton }) => {
             Register
           </Button>
           <Button
+            className="btn btn1"
             sx={{
               border: 1,
               width: "40%",
@@ -38,6 +40,23 @@ export default ({ navbutton }) => {
             Login
           </Button>
         </Box>
+      )}
+      {foo && (
+        <Button
+          sx={{
+            backgroundColor: "#FB246A",
+            color: "white",
+            maxWidth: "50px",
+            minWidth: "20px",
+            maxHeight: "40px",
+            minHeight: "40px",
+            ":hover": {
+              backgroundColor: "#FB246A",
+            },
+          }}
+        >
+          <TelegramIcon />
+        </Button>
       )}
     </>
   );
