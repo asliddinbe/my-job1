@@ -3,7 +3,17 @@ import React from "react";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-export default ({ navbutton, foo, bosh, btn, topbtn, topbtn2, btntext }) => {
+export default ({
+  navbutton,
+  foo,
+  bosh,
+  btn,
+  btn2,
+  topbtn,
+  topbtn2,
+  btntext,
+  cardbutton,
+}) => {
   const [open, setOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -140,6 +150,37 @@ export default ({ navbutton, foo, bosh, btn, topbtn, topbtn2, btntext }) => {
           }}
         >
           {btntext}
+        </Button>
+      )}
+      {cardbutton && (
+        <Button
+          sx={{
+            border: 1,
+            maxHeight: "40px",
+            borderRadius: "30px",
+            p: "0px 30px 0x 30px",
+          }}
+        >
+          Full Time
+        </Button>
+      )}
+      {btn2 && (
+        <Button
+          sx={{
+            border: 1,
+            width: "40%",
+            height: "70px",
+            mt: "5%",
+            borderRadius: 4,
+            color: "white",
+            backgroundColor: "#FB246A",
+            ":hover": {
+              color: "white",
+              backgroundColor: "#FB246A",
+            },
+          }}
+        >
+          Find Job
         </Button>
       )}
     </>
