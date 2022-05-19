@@ -1,62 +1,108 @@
-import { Box, Container, Divider, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Divider,
+  Grid,
+  InputBase,
+  Typography,
+} from "@mui/material";
 import React, { useState } from "react";
 import Header from "../../components/Header";
-import PersonIcon from "@mui/icons-material/Person";
+import Card from "../../components/Card";
+import ButtonGraup from "../../components/ButtonGraup";
 export default () => {
   return (
     <>
       <Box>
         <Container>
-          <Box sx={{ pt: "10%" }}>
+          <Box>
+            <Grid container sx={{ pt: "10%", pb: "10%" }}>
+              <Grid item xs={12} sm={12} md={8} lg={8} xl={8}>
+                <Typography
+                  sx={{
+                    fontSize: { md: 65, sm: 55, xs: 25 },
+                    fontWeight: { md: "900", sm: "800", xs: "600" },
+                    color: "#28395A",
+                  }}
+                >
+                  Find the most exciting startup jobs
+                </Typography>
+                <Grid container>
+                  <Grid
+                    item
+                    xs={12}
+                    sm={5}
+                    md={5}
+                    lg={5}
+                    xl={5}
+                    sx={{ display: "flex" }}
+                  >
+                    <InputBase
+                      placeholder="Job Tittle or keyword"
+                      sx={{
+                        width: "100%",
+                        pt: "5%",
+                        pb: "5%",
+                        pl: "4%",
+                      }}
+                    />
+                    <Divider
+                      orientation="vertical"
+                      variant="middle"
+                      flexItem
+                      sx={{ display: { sm: "flex", xs: "none" } }}
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={5} md={5} lg={5} xl={5}>
+                    <ButtonGraup bosh />
+                  </Grid>
+                  <Grid item xs={12} sm={2} md={2} lg={2} xl={2}>
+                    <ButtonGraup btn />
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
+                2
+              </Grid>
+            </Grid>
+          </Box>
+          <Box
+            sx={{
+              pt: "10%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flexDirection: "column",
+            }}
+          >
             <Header
               header1
               title="FEATURED TOURS PACKAGES"
               text="Browse Top Categories"
             />
-            <Grid container sx={{ pt: "7%" }}>
-              <Grid item xs={12}>
-                <Grid container columnSpacing={5} rowSpacing={3}>
-                  {[0, 1, 2, , 2, 2, 1, 1, 1].map((value) => (
-                    <Grid key={value} item xs={12} sm={4} md={3} lg={3} xl={3}>
-                      <Box
-                        role="button"
-                        sx={{
-                          width: "100%",
-                          display: "flex",
-                          justifyContent: "center",
-                          ":hover": {
-                            boxShadow: 1,
-                            color: "#FB2E9F",
-                          },
-                        }}
-                      >
-                        <Typography
-                          sx={{
-                            display: "flex",
-                            justifyContent: "center",
-                            flexDirection: "column",
-                            alignItems: "center",
-                            pb: "15%",
-                            pt: "15%",
-                          }}
-                        >
-                          <Typography>
-                            <PersonIcon
-                              sx={{ color: "#014B85", fontSize: 60 }}
-                            />
-                          </Typography>
-                          <Typography>Design & Creative</Typography>
-                          <Typography sx={{ color: "#FB2E9F" }}>
-                            (653)
-                          </Typography>
-                        </Typography>
-                      </Box>
-                    </Grid>
-                  ))}
-                </Grid>
-              </Grid>
-            </Grid>
+            <Card grid1 />
+            <ButtonGraup topbtn btntext="BROWSE ALL SECTORS" />
           </Box>
+        </Container>
+        <Box
+          sx={{
+            backgroundColor: "red",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+          }}
+        >
+          <Header
+            header2
+            title="FEATURED TOURS PACKAGES"
+            text="Make a Difference with Your Online Resume!"
+          />
+          <ButtonGraup topbtn btntext="UPLOAD YOUR CV" />
+        </Box>
+        <Container>
+          <Header title="RECENT JOB" text="Featured Jobs" header1 />
+          <Card grid2 />
         </Container>
       </Box>
     </>
