@@ -10,6 +10,8 @@ import React, { useState } from "react";
 import Header from "../../components/Header";
 import Card from "../../components/Card";
 import ButtonGraup from "../../components/ButtonGraup";
+import Swiper from "../../components/Swiper";
+import person from "../../assets/img/qwqw.webp";
 export default () => {
   return (
     <>
@@ -101,8 +103,50 @@ export default () => {
           <ButtonGraup topbtn btntext="UPLOAD YOUR CV" />
         </Box>
         <Container>
-          <Header title="RECENT JOB" text="Featured Jobs" header1 />
-          <Card grid2 />
+          <Box>
+            <Header title="RECENT JOB" text="Featured Jobs" header1 />
+            <Card grid2 />
+          </Box>
+        </Container>
+        <Box sx={{ bgcolor: "blue" }}>
+          <Container>
+            <Header title="APPLY PROCESS" text="How it works" header3 />
+            <Card grid3 />
+          </Container>
+        </Box>
+        <Container sx={{ pt: "10%", pb: "10%" }}>
+          <Swiper />
+          <Grid container sx={{ pt: "10%" }}>
+            <Grid xs={12} sm={12} md={6} lg={6} xl={6}>
+              <Header
+                header1
+                title="WHAT WE ARE DOING"
+                text="24k Talented people are getting Jobs"
+              />
+              <Typography sx={{ width: "80%" }}>
+                <Typography sx={{ fontWeight: "600", lineHeight: 1.5 }}>
+                  Mollit anim laborum duis au dolor in voluptate velit ess
+                  cillum dolore eu lore dsu quality mollit anim laborumuis au
+                  dolor in voluptate velit cillum.
+                </Typography>
+                <br />
+                <br />
+                <Typography sx={{ lineHeight: 2, fontSize: 15 }}>
+                  Mollit anim laborum.Duis aute irufg dhjkolohr in re voluptate
+                  velit esscillumlore eu quife nrulla parihatur. Excghcepteur
+                  signjnt occa cupidatat non inulpadeserunt mollit aboru.
+                  temnthp incididbnt ut labore mollit anim laborum suis aute.
+                </Typography>
+                <ButtonGraup btn2 />
+              </Typography>
+            </Grid>
+            <Grid xs={12} sm={12} md={6} lg={6} xl={6}>
+              <img src={person} width={"100%"} />
+            </Grid>
+          </Grid>
+        </Container>
+        <Container>
+          <Card grid4 />
         </Container>
       </Box>
     </>
