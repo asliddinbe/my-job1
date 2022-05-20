@@ -18,7 +18,18 @@ export default () => {
   };
   return (
     <>
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          position: "-webkit-sticky",
+          position: "fixed",
+          width: "100%",
+          bgcolor: "white",
+          zIndex: "21323",
+          top: 0,
+        }}
+      >
         {/* laptop */}
         <Box
           sx={{
