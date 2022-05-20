@@ -12,8 +12,8 @@ export default ({ header1, header2, title, text, header3 }) => {
             justifyContent: "center",
             flexDirection: "column",
             fontFamily: "arial",
-            pt: "10%",
-            pb: "10%",
+            pt: "5%",
+            pb: "5%",
           }}
         >
           <Typography
@@ -56,6 +56,7 @@ export default ({ header1, header2, title, text, header3 }) => {
               fontWeight: "550",
               textAlign: "center",
               pt: { md: "2%", xs: "5%" },
+              width: "70%",
             }}
           >
             {text}

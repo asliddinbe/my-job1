@@ -157,8 +157,14 @@ export default ({
           sx={{
             border: 1,
             maxHeight: "40px",
+            maxWidth: "150px",
+            minWidth: "150px",
             borderRadius: "30px",
             p: "0px 30px 0x 30px",
+            ":hover": {
+              color: "white",
+              backgroundColor: "#8B92DD",
+            },
           }}
         >
           Full Time

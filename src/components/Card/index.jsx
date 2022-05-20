@@ -1,11 +1,12 @@
 import React from "react";
 import PersonIcon from "@mui/icons-material/Person";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Link, Typography } from "@mui/material";
 import tit from "../../assets/img/1.webp";
 import ButtonGraup from "../ButtonGraup";
 import FeedIcon from "@mui/icons-material/Feed";
 import power from "../../assets/img/power.webp";
-export default ({ grid1, grid2, grid3, grid4 }) => {
+import { hover } from "@testing-library/user-event/dist/hover";
+export default ({ grid1, grid2, grid3, grid4, List }) => {
   const font = { fontSize: 15 };
   return (
     <>
@@ -13,14 +14,17 @@ export default ({ grid1, grid2, grid3, grid4 }) => {
         <Grid container sx={{ pt: "7%" }}>
           <Grid item xs={12}>
             <Grid container columnSpacing={5} rowSpacing={3}>
-              {[0, 1, 2, , 2, 2, 1, 1, 1].map((value) => (
+              {List.map((value) => (
                 <Grid key={value} item xs={12} sm={4} md={3} lg={3} xl={3}>
                   <Box
                     role="button"
                     sx={{
                       width: "100%",
+                      height: { md: 200 },
                       display: "flex",
                       justifyContent: "center",
+                      border: 1,
+                      borderColor: "#DAFCEF",
                       ":hover": {
                         boxShadow: 1,
                         color: "#FB2E9F",
@@ -37,10 +41,12 @@ export default ({ grid1, grid2, grid3, grid4 }) => {
                         pt: "15%",
                       }}
                     >
-                      <Typography>
-                        <PersonIcon sx={{ color: "#014B85", fontSize: 60 }} />
+                      <Typography>{value.icon1}</Typography>
+                      <Typography
+                        sx={{ cursor: "pointer", pt: "1%", pb: "1%" }}
+                      >
+                        {value.soz}
                       </Typography>
-                      <Typography>Design & Creative</Typography>
                       <Typography sx={{ color: "#FB2E9F" }}>(653)</Typography>
                     </Typography>
                   </Box>
@@ -53,7 +59,7 @@ export default ({ grid1, grid2, grid3, grid4 }) => {
 
       {grid2 && (
         <Grid container justifyContent={"center"} sx={{ pb: "10%" }}>
-          {[1, 2, 3].map((item) => (
+          {List.map((item) => (
             <Grid
               key={item}
               container
@@ -81,7 +87,7 @@ export default ({ grid1, grid2, grid3, grid4 }) => {
                   alignItems: "center",
                 }}
               >
-                <img src={tit} />
+                <img src={item.img} />
               </Grid>
               <Grid xs={12} sm={8} md={6} lg={6} xl={6}>
                 <Box>
@@ -116,7 +122,9 @@ export default ({ grid1, grid2, grid3, grid4 }) => {
                 }}
               >
                 <ButtonGraup cardbutton />
-                <Typography sx={{ pl: "5%" }}>7 hours ago</Typography>
+                <Typography sx={{ pt: "5%", color: "silver", width: "45%" }}>
+                  7 hours ago
+                </Typography>
               </Grid>
             </Grid>
           ))}
@@ -126,14 +134,24 @@ export default ({ grid1, grid2, grid3, grid4 }) => {
         <Grid container sx={{ pt: "5%", pb: "10%" }}>
           <Grid item xs={12}>
             <Grid container columnSpacing={5} rowSpacing={3}>
-              {[0, 1, 2].map((value) => (
-                <Grid key={value} item xs={12} sm={6} md={4} lg={4} xl={4}>
+              {List.map((value) => (
+                <Grid
+                  key={value}
+                  item
+                  xs={12}
+                  sm={6}
+                  md={4}
+                  lg={4}
+                  xl={4}
+                  sx={{}}
+                >
                   <Box
                     role="button"
                     sx={{
                       width: "100%",
                       display: "flex",
                       justifyContent: "center",
+                      bgcolor: "#26317F",
                     }}
                   >
                     <Typography
@@ -147,13 +165,19 @@ export default ({ grid1, grid2, grid3, grid4 }) => {
                         color: "white",
                       }}
                     >
-                      <Typography>
-                        <FeedIcon sx={{ fontSize: 60 }} />
+                      <Typography
+                        sx={{
+                          transform: " rotateY(0)",
+                          width: "100%",
+                          textAlign: "center",
+                          ":hover": { transform: " rotateY(150deg)" },
+                          transition: "2s",
+                        }}
+                      >
+                        {value.icon2}
                       </Typography>
-                      <Typography sx={{ fontSize: 25 }}>
-                        1.Search a job
-                      </Typography>
-                      <Typography sx={{ textAlign: "center" }}>
+                      <Typography sx={{ fontSize: 25 }}>{value.job}</Typography>
+                      <Typography sx={{ textAlign: "center", pt: "2%" }}>
                         Sorem spsum dolor sit amsectetur <br /> adipisclit,
                         seddo eiusmod tempor <br /> incididunt ut laborea.
                       </Typography>
@@ -167,10 +191,10 @@ export default ({ grid1, grid2, grid3, grid4 }) => {
       )}
       {grid4 && (
         <Grid container>
-          {[1, 2].map((item) => (
+          {List.map((item) => (
             <Grid item xs={12} sm={6} md={6} lg={6} xl={6} sx={{ pb: "10%" }}>
               <Box sx={{ position: "relative" }}>
-                <img src={power} style={{ width: "90%" }} />
+                <img src={item.img} style={{ width: "90%" }} />
                 <Typography
                   sx={{
                     bottom: 4,
